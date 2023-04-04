@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AbbaTheCash.Views.LoginPage"
+             xmlns:local="clr-namespace:AbbaTheCash.ViewModels"
+             BackgroundColor="GhostWhite"
+             Shell.NavBarIsVisible="False"
+             Title="LoginPage">
+    <ContentPage.BindingContext>
+        <local:LoginVM/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout>
+        <VerticalStackLayout  Padding="30" Spacing="40">
+            <Image HorizontalOptions="Center" WidthRequest="300" />
+            <Label>
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span FontFamily="Consolas" FontAttributes="Bold" FontSize="20" Text="Welcome to " />
+                        <Span FontFamily="Consolas" FontAttributes="Bold" FontSize="30" Text="Abba The Cash." TextColor="{StaticResource Primary}"/>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <VerticalStackLayout Spacing="10">
+                <Frame CornerRadius="10" Padding="3">
+                    <Entry x:Name="etMobileNumber" Keyboard="Telephone" Text="{Binding PhoneNumber}" Margin="5,0,0,0" Placeholder="Mobile Number" PlaceholderColor="DarkBlue" HeightRequest="40" />
+                </Frame>
+                <Frame CornerRadius="10" Padding="3">
+                    <Entry x:Name="etPW" Text="{Binding PW}" Placeholder="Password" HeightRequest="40" Margin="5,0,0,0" IsPassword="True" PlaceholderColor="DarkBlue" />
+                </Frame>
+                <Label HorizontalOptions="End" TextColor="PaleVioletRed" Text="Forgot Password?" TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ForgotCommand}" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+            <HorizontalStackLayout>
+                <Button Command="{Binding LoginBtnCommand}" Text="Login" TextColor="White" FontAttributes="Bold" FontSize="Large" BackgroundColor="#088da5" />
+                <Image Source="fingerprintIcon.png" HorizontalOptions="End" WidthRequest="1" />
+            </HorizontalStackLayout>
+            <VerticalStackLayout>
+                <Label Text="Don't have an account?"/>
+                <Label HorizontalOptions="CenterAndExpand" Text="SIGNUP" TextColor="#088da5" TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding SignUpCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,14 +1,32 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
 <Shell
     x:Class="AbbaTheCash.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:AbbaTheCash"
+    xmlns:views="clr-namespace:AbbaTheCash.Views"
     Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!--Login Page-->
+    <ShellContent 
+        Title="Login" 
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="login"/>
 
+     <!--SignUp Page-->
+    <ShellContent 
+        Title="SignUp" 
+        ContentTemplate="{DataTemplate views:SignUpPage}"
+        Route="signup"/>
+
+     <!--Home Page-->
+    <ShellContent 
+        Title="Home" 
+        ContentTemplate="{DataTemplate views:HomePage}"
+        Route="home"/>
+
+     <!--Login Page-->
+    <ShellContent 
+        Title="Forgot" 
+        ContentTemplate="{DataTemplate views:ForgotPWPage}"
+        Route="forgot"/>
 </Shell>

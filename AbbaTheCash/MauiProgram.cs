@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using AbbaTheCash.ViewModels;
+using Microsoft.Extensions.Logging;
 
 namespace AbbaTheCash;
 
@@ -18,7 +19,6 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
-
-		return builder.Build();
+        return builder.Build();
 	}
 }
