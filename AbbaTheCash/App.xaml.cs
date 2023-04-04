@@ -9,11 +9,14 @@ namespace AbbaTheCash;
 
 public partial class App : Application
 {
-	public App()
+    public static Realms.Sync.App RealmApp;
+    public App()
 	{
 		InitializeComponent();
 
-		MainPage = new AppShell();
+        RealmApp = Realms.Sync.App.Create(AppConfig.RealmAppId);
+
+        MainPage = new AppShell();
 
         Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping("NoUnderLine", (handler, view) =>
         {

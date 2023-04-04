@@ -1,48 +1,31 @@
 ﻿using System;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
 namespace AbbaTheCash.ViewModels
 {
     public partial class LoginVM : BaseVM
     {
-        private string _phoneNumber;
-        public string PhoneNumber
-        {
-            get => _phoneNumber;
-            set
-            {
-                _phoneNumber = value;
-                OnPropertyChanged();
-            }
-        }
+        [ObservableProperty]
+        string phoneNumber;
 
-        private string _pw;
-        public string PW
-        {
-            get => _pw;
-            set
-            {
-                _pw = value;
-                OnPropertyChanged();
-            }
-        }
+        [ObservableProperty]
+        string pswd;
 
-        public ICommand LoginBtnCommand { get; set; }
         public ICommand ForgotCommand { set; get; }
         public ICommand SignUpCommand { set; get; }
 
         public LoginVM()
         {
-            LoginBtnCommand = new Command(OnLogin);
             ForgotCommand = new Command(OnForgotPW);
             SignUpCommand = new Command(OnSignUp);
         }
 
-        public async void OnLogin()
+        [RelayCommand]
+        public async void Login()
         {
-            var tesss = PhoneNumber + PW;
             await Shell.Current.GoToAsync("home");
         }
 

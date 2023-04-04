@@ -1,4 +1,5 @@
 ﻿using AbbaTheCash.ViewModels;
+using AbbaTheCash.Views;
 using Microsoft.Extensions.Logging;
 
 namespace AbbaTheCash;
@@ -19,6 +20,14 @@ public static class MauiProgram
 #if DEBUG
 		builder.Logging.AddDebug();
 #endif
+        builder.Services.AddSingleton<LoginVM>();
+        builder.Services.AddSingleton<LoginPage>();
+        builder.Services.AddSingleton<HomePage>();
+        builder.Services.AddSingleton<HomeVM>();
+        builder.Services.AddSingleton<ForgotPWPage>();
+        builder.Services.AddSingleton<ForgotPWVM>();
+        builder.Services.AddSingleton<SignUpPage>();
+        builder.Services.AddSingleton<SignUpVM>();
         return builder.Build();
 	}
 }

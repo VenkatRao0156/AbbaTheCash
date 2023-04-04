@@ -1,9 +1,12 @@
-﻿namespace AbbaTheCash.Views;
+﻿using AbbaTheCash.ViewModels;
+
+namespace AbbaTheCash.Views;
 
 public partial class SignUpPage : ContentPage
 {
-	public SignUpPage()
-	{
-		InitializeComponent();
-	}
+    public SignUpPage(SignUpVM vm)
+    {
+        InitializeComponent();
+        BindingContext = vm;
+    }
 }
