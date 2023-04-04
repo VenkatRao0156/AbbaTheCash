@@ -11,14 +11,22 @@ namespace AbbaTheCash.ViewModels
         public string PhoneNumber
         {
             get => _phoneNumber;
-            set => OnPropertyChanged(_phoneNumber);
+            set
+            {
+                _phoneNumber = value;
+                OnPropertyChanged();
+            }
         }
 
         private string _pw;
         public string PW
         {
             get => _pw;
-            set => OnPropertyChanged(_pw);
+            set
+            {
+                _pw = value;
+                OnPropertyChanged();
+            }
         }
 
         public ICommand LoginBtnCommand { get; set; }
@@ -34,6 +42,7 @@ namespace AbbaTheCash.ViewModels
 
         public async void OnLogin()
         {
+            var tesss = PhoneNumber + PW;
             await Shell.Current.GoToAsync("home");
         }
 
@@ -48,4 +57,3 @@ namespace AbbaTheCash.ViewModels
         }
     }
 }
-
