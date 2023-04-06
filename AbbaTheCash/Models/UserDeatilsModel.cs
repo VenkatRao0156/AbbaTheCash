@@ -18,10 +18,6 @@ namespace AbbaTheCash.Models
         [Required]
         public string LastName { get; set; }
 
-        [MapTo("phoneNumber")]
-        [Required]
-        public string PhoneNumber { get; set; }
-
         [MapTo("emailID")]
         [Required]
         public string EmailID { get; set; }
@@ -29,10 +25,6 @@ namespace AbbaTheCash.Models
         [MapTo("panCard")]
         [Required]
         public string PanCard { get; set; }
-
-        [MapTo("pswd")]
-        [Required]
-        public string Pswd { get; set; }
 
         [MapTo("_partition")]
         [Required]
