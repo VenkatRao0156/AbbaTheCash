@@ -4,7 +4,6 @@ using CommunityToolkit.Mvvm.Input;
 using System.Windows.Input;
 using Realms;
 using Realms.Sync;
-using IntelliJ.Lang.Annotations;
 using AbbaTheCash.Models;
 
 namespace AbbaTheCash.ViewModels

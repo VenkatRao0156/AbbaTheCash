@@ -6,27 +6,68 @@
     xmlns:views="clr-namespace:AbbaTheCash.Views"
     Shell.FlyoutBehavior="Disabled">
 
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <Grid BackgroundColor="Black"
+                  HeightRequest="60">
+                <Image Aspect="AspectFill"
+                       Source="store.jpg"
+                       Opacity="0.6" />
+                <Label Text="My Name"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
     <!--Login Page-->
     <ShellContent 
         Title="Login" 
         ContentTemplate="{DataTemplate views:LoginPage}"
+        FlyoutItemIsVisible="False"
         Route="login"/>
 
      <!--SignUp Page-->
     <ShellContent 
         Title="SignUp" 
         ContentTemplate="{DataTemplate views:SignUpPage}"
+        FlyoutItemIsVisible="False"
         Route="signup"/>
 
      <!--Home Page-->
     <ShellContent 
         Title="Home" 
         ContentTemplate="{DataTemplate views:HomePage}"
+        FlyoutItemIsVisible="False"
         Route="home"/>
 
      <!--Login Page-->
     <ShellContent 
         Title="Forgot" 
         ContentTemplate="{DataTemplate views:ForgotPWPage}"
+        FlyoutItemIsVisible="False"
         Route="forgot"/>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Home"
+                      Icon="monkey.png"
+                      ContentTemplate="{DataTemplate views:HomePage}" />
+        <ShellContent Title="Transactions"
+                      Icon="elephant.png"
+                      ContentTemplate="{DataTemplate views:HomePage}" />
+        <ShellContent Title="My Cards"
+                      Icon="bear.png"
+                      ContentTemplate="{DataTemplate views:HomePage}" />
+        <ShellContent Title="Settings"
+                      Icon="bear.png"
+                      ContentTemplate="{DataTemplate views:HomePage}" />
+        <ShellContent Title="About us"
+                      Icon="bear.png"
+                      ContentTemplate="{DataTemplate views:HomePage}" />
+        <ShellContent Title="SignOut"
+                      Icon="bearpng"
+                      ContentTemplate="{DataTemplate views:HomePage}" />
+    </FlyoutItem>
 </Shell>

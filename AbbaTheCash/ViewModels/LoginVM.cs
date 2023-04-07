@@ -26,7 +26,7 @@ namespace AbbaTheCash.ViewModels
         [RelayCommand]
         public async void Login()
         {
-            await Shell.Current.GoToAsync("home");
+            await Shell.Current.GoToAsync("///home");
         }
 
         public async void OnSignUp()
