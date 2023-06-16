@@ -12,5 +12,6 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("signup", typeof(SignUpPage));
         Routing.RegisterRoute("home", typeof(HomePage));
         Routing.RegisterRoute("forgot", typeof(ForgotPWPage));
+        Routing.RegisterRoute("paymentDetails", typeof(PaymentDetailPage));
     }
 }

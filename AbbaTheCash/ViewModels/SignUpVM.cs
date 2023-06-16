@@ -36,9 +36,9 @@ namespace AbbaTheCash.ViewModels
         {
             try
             {
-                await App.RealmApp.EmailPasswordAuth.RegisterUserAsync(PhoneNumber, pswd);
+                await App.RealmApp.EmailPasswordAuth.RegisterUserAsync(PhoneNumber, Pswd);
 
-                var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(PhoneNumber, pswd));
+                var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(PhoneNumber, Pswd));
 
                 if (user != null)
                 {
@@ -47,18 +47,21 @@ namespace AbbaTheCash.ViewModels
                     try
                     {
                         var todo =
-                            new UserDeatilsModel
+                            new UserDetails
                             {
                                 FirstName=FirstName,
                                 LastName=LastName,
-                                EmailID=EmailID,
+                                PhoneNumber = PhoneNumber,
+                                EmailID =EmailID,
                                 PanCard=PanCard,
+                                PSD = Pswd,
                                 Partition = App.RealmApp.CurrentUser.Id,
                             };
                         realm.Write(() =>
                         {
                             realm.Add(todo);
                         });
+                        await Shell.Current.GoToAsync("home");
                     }
                     catch (Exception ex)
                     {

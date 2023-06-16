@@ -36,12 +36,7 @@
         FlyoutItemIsVisible="False"
         Route="signup"/>
 
-     <!--Home Page-->
-    <ShellContent 
-        Title="Home" 
-        ContentTemplate="{DataTemplate views:HomePage}"
-        FlyoutItemIsVisible="False"
-        Route="home"/>
+   
 
      <!--Login Page-->
     <ShellContent 
@@ -49,6 +44,20 @@
         ContentTemplate="{DataTemplate views:ForgotPWPage}"
         FlyoutItemIsVisible="False"
         Route="forgot"/>
+
+      <!--Home Page-->
+    <ShellContent 
+        Title="Home" 
+        ContentTemplate="{DataTemplate views:HomePage}"
+        FlyoutItemIsVisible="False"
+        Route="home"/>
+
+      <!--Payment Details Page-->
+    <ShellContent 
+        Title="PaymentDetails" 
+        ContentTemplate="{DataTemplate views:PaymentDetailPage}"
+        FlyoutItemIsVisible="False"
+        Route="paymentDetails"/>
 
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent Title="Home"

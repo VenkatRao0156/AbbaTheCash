@@ -3,6 +3,7 @@ using System.Windows.Input;
 using CommunityToolkit.Mvvm;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Realms.Sync;
 
 namespace AbbaTheCash.ViewModels
 {
@@ -26,7 +27,12 @@ namespace AbbaTheCash.ViewModels
         [RelayCommand]
         public async void Login()
         {
-            await Shell.Current.GoToAsync("///home");
+             var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword("123456789", "123456789"));
+            //var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(emailID, pswd));
+            if (user != null)
+            {
+                await Shell.Current.GoToAsync("home");
+            }
         }
 
         public async void OnSignUp()

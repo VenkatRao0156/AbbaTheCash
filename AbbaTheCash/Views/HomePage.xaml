@@ -5,11 +5,30 @@
              Shell.FlyoutBehavior="Flyout"
              Shell.TabBarIsVisible="False"
              Shell.NavBarHasShadow="True"
-             Title="HomePage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             Title="Home">
+    <VerticalStackLayout >
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Frame Grid.Column="0" Grid.Row="0">
+                <Button Command="{Binding PayBillCommand}" Text="Pay Bill" />
+            </Frame>
+            <Frame Grid.Column="1" Grid.Row="0">
+                <Button Command="{Binding PayRentCommand}" Text="Pay Rent" />
+            </Frame>
+            <Frame Grid.Column="0" Grid.Row="1">
+                <Button Command="{Binding EducationFeeCommand}" Text="Education Fee" />
+            </Frame>
+            <Frame Grid.Column="1" Grid.Row="1">
+                <Button Command="{Binding OfficeBillCommand}" Text="Office Bill" />
+            </Frame>
+        </Grid>
     </VerticalStackLayout>
+
 </ContentPage>
