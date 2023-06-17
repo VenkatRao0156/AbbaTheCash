@@ -31,18 +31,19 @@ namespace AbbaTheCash.ViewModels
             //var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(emailID, pswd));
             if (user != null)
             {
-                await Shell.Current.GoToAsync("home");
+                await Shell.Current.GoToAsync("//home");
+               // await Shell.Current.GoToAsync("home");
             }
         }
 
         public async void OnSignUp()
         {
-            await Shell.Current.GoToAsync("signup");
+            await Shell.Current.GoToAsync("//signup");
         }
 
         public async void OnForgotPW()
         {
-            await Shell.Current.GoToAsync("forgot");
+            await Shell.Current.GoToAsync("//forgot");
         }
     }
 }

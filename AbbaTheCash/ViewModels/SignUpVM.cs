@@ -61,7 +61,7 @@ namespace AbbaTheCash.ViewModels
                         {
                             realm.Add(todo);
                         });
-                        await Shell.Current.GoToAsync("home");
+                        await Shell.Current.GoToAsync("//home");
                     }
                     catch (Exception ex)
                     {
