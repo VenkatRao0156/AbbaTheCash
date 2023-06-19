@@ -28,8 +28,16 @@ public static class MauiProgram
         builder.Services.AddSingleton<ForgotPWVM>();
         builder.Services.AddSingleton<SignUpPage>();
         builder.Services.AddSingleton<SignUpVM>();
-        builder.Services.AddSingleton<PaymentDetailPage>();
-        builder.Services.AddSingleton<PaymentDetailVM>();
+        builder.Services.AddSingleton<PaymentDetailsPage>();
+        builder.Services.AddSingleton<PaymentDetailsVM>();
+        builder.Services.AddSingleton<TransactionsPage>();
+        builder.Services.AddSingleton<TransactionsVM>();
+        builder.Services.AddSingleton<MyCardsPage>();
+        builder.Services.AddSingleton<MyCardsVM>();
+        builder.Services.AddSingleton<SettingsPage>();
+        builder.Services.AddSingleton<SettingsVM>();
+        builder.Services.AddSingleton<HelpPage>();
+        builder.Services.AddSingleton<HelpVM>();
         return builder.Build();
 	}
 }

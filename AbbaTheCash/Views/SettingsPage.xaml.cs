@@ -2,9 +2,9 @@
 
 namespace AbbaTheCash.Views;
 
-public partial class ForgotPWPage : ContentPage
+public partial class SettingsPage : ContentPage
 {
-	public ForgotPWPage(ForgotPWVM vm)
+	public SettingsPage(SettingsVM vm)
 	{
 		InitializeComponent();
         BindingContext = vm;

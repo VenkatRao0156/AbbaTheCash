@@ -47,33 +47,37 @@
     <ShellContent 
         Title="Home" 
         ContentTemplate="{DataTemplate views:HomePage}"
-        FlyoutItemIsVisible="False"
         Route="home"/>
 
       <!--Payment Details Page-->
     <ShellContent 
         Title="PaymentDetails" 
-        ContentTemplate="{DataTemplate views:PaymentDetailPage}"
+        ContentTemplate="{DataTemplate views:PaymentDetailsPage}"
         FlyoutItemIsVisible="False"
         Route="paymentDetails"/>
+
+     <ShellContent 
+        Title="Transactions" 
+        ContentTemplate="{DataTemplate views:TransactionsPage}"
+        Route="transactions"/>
+
+      <ShellContent 
+        Title="My Cards" 
+        ContentTemplate="{DataTemplate views:MyCardsPage}"
+        Route="myCards"/>
+
+      <ShellContent 
+        Title="Settings" 
+        ContentTemplate="{DataTemplate views:SettingsPage}"
+        Route="settings"/>
+
+      <ShellContent 
+        Title="Help" 
+        ContentTemplate="{DataTemplate views:HelpPage}"
+        Route="help"/>
+
     <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="Home"
-                      Icon="monkey.png"
-                      ContentTemplate="{DataTemplate views:HomePage}" />
-        <ShellContent Title="Transactions"
-                      Icon="elephant.png"
-                      ContentTemplate="{DataTemplate views:HomePage}" />
-        <ShellContent Title="My Cards"
-                      Icon="bear.png"
-                      ContentTemplate="{DataTemplate views:HomePage}" />
-        <ShellContent Title="Settings"
-                      Icon="bear.png"
-                      ContentTemplate="{DataTemplate views:HomePage}" />
-        <ShellContent Title="About us"
-                      Icon="bear.png"
-                      ContentTemplate="{DataTemplate views:HomePage}" />
         <ShellContent Title="SignOut"
-                      Icon="bearpng"
-                      ContentTemplate="{DataTemplate views:HomePage}" />
+                      Icon="bearpng" />
     </FlyoutItem>
 </Shell>

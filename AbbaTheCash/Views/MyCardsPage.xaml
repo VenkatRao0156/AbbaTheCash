@@ -1,9 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AbbaTheCash.Views.PaymentDetailPage"
-             Title="PaymentDetail">
+             x:Class="AbbaTheCash.Views.MyCardsPage"
+             Title="MyCards">
     <VerticalStackLayout>
-       <Entry Placeholder="Enter Amount"/>
+        <Label 
+            Text="My Cards"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
     </VerticalStackLayout>
 </ContentPage>

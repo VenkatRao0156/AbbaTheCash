@@ -1,9 +1,9 @@
 ﻿using System;
 namespace AbbaTheCash.ViewModels
 {
-	public class PaymentDetailVM
+	public class SettingsVM
 	{
-		public PaymentDetailVM()
+		public SettingsVM()
 		{
 		}
 	}
