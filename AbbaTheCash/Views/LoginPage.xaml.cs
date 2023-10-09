@@ -9,4 +9,11 @@ public partial class LoginPage : ContentPage
         InitializeComponent();
         BindingContext = vm;
     }
+
+    protected override bool OnBackButtonPressed()
+    {
+        var vm = (LoginVM)BindingContext;
+        vm.OnHardBackButtonPressed();
+        return true;
+    }
 }

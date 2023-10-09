@@ -6,13 +6,16 @@ using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace AbbaTheCash.ViewModels
 {
-	public partial class BaseVM: ObservableObject
+    public abstract class BaseVM : ObservableObject
     {
-        [ObservableProperty]
-        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
-        bool isBusy;
+        //[ObservableProperty]
+        //[NotifyPropertyChangedFor(nameof(IsNotBusy))]
+        //bool isBusy;
 
-        public bool IsNotBusy => !IsBusy;
+        //public bool IsNotBusy => !IsBusy;
+
+
+        public abstract void OnHardBackButtonPressed();
     }
 }
 

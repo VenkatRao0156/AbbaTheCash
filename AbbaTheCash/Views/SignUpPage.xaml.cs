@@ -9,4 +9,11 @@ public partial class SignUpPage : ContentPage
         InitializeComponent();
         BindingContext = vm;
     }
+
+    protected override bool OnBackButtonPressed()
+    {
+        var vm = (SignUpVM)BindingContext;
+        vm.OnHardBackButtonPressed();
+        return true;
+    }
 }

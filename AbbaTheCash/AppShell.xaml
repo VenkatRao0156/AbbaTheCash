@@ -5,7 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:AbbaTheCash.Views"
     Shell.FlyoutBehavior="Flyout">
-    
+
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
             <Grid BackgroundColor="Black"
@@ -29,55 +29,62 @@
         FlyoutItemIsVisible="False"
         Route="login"/>
 
-     <!--SignUp Page-->
+    <!--SignUp Page-->
     <ShellContent 
         Title="SignUp" 
         ContentTemplate="{DataTemplate views:SignUpPage}"
         FlyoutItemIsVisible="False"
         Route="signup"/>
 
-     <!--Login Page-->
+    <!--Login Page-->
     <ShellContent 
         Title="Forgot" 
         ContentTemplate="{DataTemplate views:ForgotPWPage}"
         FlyoutItemIsVisible="False"
         Route="forgot"/>
 
-      <!--Home Page-->
+    <!--Home Page-->
     <ShellContent 
         Title="Home" 
         ContentTemplate="{DataTemplate views:HomePage}"
         Route="home"/>
 
-      <!--Payment Details Page-->
+    <!--Payment Details Page-->
     <ShellContent 
         Title="PaymentDetails" 
         ContentTemplate="{DataTemplate views:PaymentDetailsPage}"
         FlyoutItemIsVisible="False"
         Route="paymentDetails"/>
 
-     <ShellContent 
+    <ShellContent 
         Title="Transactions" 
         ContentTemplate="{DataTemplate views:TransactionsPage}"
         Route="transactions"/>
 
-      <ShellContent 
+    <ShellContent 
         Title="My Cards" 
         ContentTemplate="{DataTemplate views:MyCardsPage}"
         Route="myCards"/>
 
-      <ShellContent 
+    <ShellContent 
+       Title="My Payee" 
+       ContentTemplate="{DataTemplate views:MyPayeePage}"
+       Route="myPayee"/>
+
+    <ShellContent 
         Title="Settings" 
         ContentTemplate="{DataTemplate views:SettingsPage}"
         Route="settings"/>
 
-      <ShellContent 
+    <ShellContent 
         Title="Help" 
         ContentTemplate="{DataTemplate views:HelpPage}"
         Route="help"/>
 
-    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
-        <ShellContent Title="SignOut"
-                      Icon="bearpng" />
-    </FlyoutItem>
+    <ShellContent 
+     Title="SignOut"
+     Icon="bearpng" />
+
+    <ShellContent 
+     Title="Exit" />
 </Shell>

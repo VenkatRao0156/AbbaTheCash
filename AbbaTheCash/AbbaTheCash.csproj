@@ -63,11 +63,6 @@
 	  <None Remove="ViewModels\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Views\" />
-	  <Folder Include="Models\" />
-	  <Folder Include="ViewModels\" />
-	</ItemGroup>
-	<ItemGroup>
 	  <MauiXaml Remove="Resources\Styles\Styles.xaml" />
 	  <MauiXaml Remove="Resources\Styles\Colors.xaml" />
 	</ItemGroup>

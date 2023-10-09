@@ -34,45 +34,49 @@ namespace AbbaTheCash.ViewModels
         [RelayCommand]
         public async void SignUp()
         {
-            try
-            {
-                await App.RealmApp.EmailPasswordAuth.RegisterUserAsync(PhoneNumber, Pswd);
+            #region MongoDB Atlas related Code
+            //try
+            //{
+            //    await App.RealmApp.EmailPasswordAuth.RegisterUserAsync(PhoneNumber, Pswd);
 
-                var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(PhoneNumber, Pswd));
+            //    var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(PhoneNumber, Pswd));
 
-                if (user != null)
-                {
-                    config = new PartitionSyncConfiguration($"{App.RealmApp.CurrentUser.Id}", App.RealmApp.CurrentUser);
-                    realm = Realm.GetInstance(config);
-                    try
-                    {
-                        var todo =
-                            new UserDetails
-                            {
-                                FirstName=FirstName,
-                                LastName=LastName,
-                                PhoneNumber = PhoneNumber,
-                                EmailID =EmailID,
-                                PanCard=PanCard,
-                                PSD = Pswd,
-                                Partition = App.RealmApp.CurrentUser.Id,
-                            };
-                        realm.Write(() =>
-                        {
-                            realm.Add(todo);
-                        });
-                        await Shell.Current.GoToAsync("//home");
-                    }
-                    catch (Exception ex)
-                    {
-                        await Application.Current.MainPage.DisplayPromptAsync("Error", ex.Message);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                await Application.Current.MainPage.DisplayAlert("Error creating account!", "Error: " + ex.Message, "OK");
-            }
+            //    if (user != null)
+            //    {
+            //        config = new PartitionSyncConfiguration($"{App.RealmApp.CurrentUser.Id}", App.RealmApp.CurrentUser);
+            //        realm = Realm.GetInstance(config);
+            //        try
+            //        {
+            //            var todo =
+            //                new UserDetails
+            //                {
+            //                    FirstName = FirstName,
+            //                    LastName = LastName,
+            //                    PhoneNumber = PhoneNumber,
+            //                    EmailID = EmailID,
+            //                    PanCard = PanCard,
+            //                    PSD = Pswd,
+            //                    Partition = App.RealmApp.CurrentUser.Id,
+            //                };
+            //            realm.Write(() =>
+            //            {
+            //                realm.Add(todo);
+            //            });
+            //            await Shell.Current.GoToAsync("//home"); // try using ("///home")
+            //        }
+            //        catch (Exception ex)
+            //        {
+            //            await Application.Current.MainPage.DisplayPromptAsync("Error", ex.Message);
+            //        }
+            //    }
+            //}
+            //catch (Exception ex)
+            //{
+            //    await Application.Current.MainPage.DisplayAlert("Error creating account!", "Error: " + ex.Message, "OK");
+            //}
+            #endregion
+
+            await Shell.Current.GoToAsync("///home");
         }
 
         public ICommand SignInCommand { set; get; }
@@ -91,6 +95,15 @@ namespace AbbaTheCash.ViewModels
         {
             config = new PartitionSyncConfiguration($"{App.RealmApp.CurrentUser.Id}", App.RealmApp.CurrentUser);
             realm = Realm.GetInstance(config);
+        }
+
+        public async override void OnHardBackButtonPressed()
+        {
+            var exit = await App.Current.MainPage.DisplayAlert("Exit App?", "Are you want to exit the app?", "Yes", "No");
+            if (exit)
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }

@@ -34,6 +34,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<TransactionsVM>();
         builder.Services.AddSingleton<MyCardsPage>();
         builder.Services.AddSingleton<MyCardsVM>();
+        builder.Services.AddSingleton<MyPayeePage>();
+        builder.Services.AddSingleton<MyPayeeVM>();
         builder.Services.AddSingleton<SettingsPage>();
         builder.Services.AddSingleton<SettingsVM>();
         builder.Services.AddSingleton<HelpPage>();

@@ -15,7 +15,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <Frame Grid.Column="0" Grid.Row="0">
-                <Button Command="{Binding PayBillCommand}" Text="Pay Bill" />
+                <Button Command="{Binding PayBillCommand}" Text="Utility Bill" />
             </Frame>
             <Frame Grid.Column="1" Grid.Row="0">
                 <Button Command="{Binding PayRentCommand}" Text="Pay Rent" />
@@ -24,7 +24,7 @@
                 <Button Command="{Binding EducationFeeCommand}" Text="Education Fee" />
             </Frame>
             <Frame Grid.Column="1" Grid.Row="1">
-                <Button Command="{Binding OfficeBillCommand}" Text="Office Bill" />
+                <Button Command="{Binding OfficeBillCommand}" Text="Office Fee" />
             </Frame>
         </Grid>
     </VerticalStackLayout>

@@ -27,23 +27,36 @@ namespace AbbaTheCash.ViewModels
         [RelayCommand]
         public async void Login()
         {
-             var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword("123456789", "123456789"));
-            //var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(emailID, pswd));
-            if (user != null)
-            {
-                await Shell.Current.GoToAsync("//home");
-               // await Shell.Current.GoToAsync("home");
-            }
+            #region Mongo DB Atlas related Code
+            //var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword("123456789", "123456789"));
+            ////var user = await App.RealmApp.LogInAsync(Credentials.EmailPassword(emailID, pswd));
+            //if (user != null)
+            //{
+            //    await Shell.Current.GoToAsync("//home");
+            //    // await Shell.Current.GoToAsync("home");
+            //} 
+            #endregion
+
+            await Shell.Current.GoToAsync("///home");
         }
 
         public async void OnSignUp()
         {
-            await Shell.Current.GoToAsync("//signup");
+            await Shell.Current.GoToAsync("///signup");
         }
 
         public async void OnForgotPW()
         {
-            await Shell.Current.GoToAsync("//forgot");
+            await Shell.Current.GoToAsync("///forgot");
+        }
+
+        public async override void OnHardBackButtonPressed()
+        {
+            var exit = await App.Current.MainPage.DisplayAlert("Exit App?", "Are you want to exit the app?", "Yes", "No");
+            if (exit)
+            {
+                Environment.Exit(0);
+            }
         }
     }
 }
