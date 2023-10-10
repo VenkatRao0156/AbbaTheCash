@@ -82,6 +82,11 @@
         Route="help"/>
 
     <MenuItem 
+     Command="{Binding ContactUsCommand}"
+     Text="Contact Us"
+     IconImageSource="bearpng" />
+
+    <MenuItem 
         Command="{Binding SignOutCommand}"
         Text="SignOut"
         IconImageSource="bearpng" />
