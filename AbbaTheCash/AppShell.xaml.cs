@@ -1,12 +1,16 @@
-﻿using AbbaTheCash.Views;
+﻿using AbbaTheCash.ViewModels;
+using AbbaTheCash.Views;
 
 namespace AbbaTheCash;
 
 public partial class AppShell : Shell
 {
-	public AppShell()
+    public AppShell()
 	{
-		InitializeComponent();
+        InitializeComponent();
+
+        AppShellVM vm=new AppShellVM();
+        BindingContext = vm;
 
         Routing.RegisterRoute("login", typeof(LoginPage));
         Routing.RegisterRoute("signup", typeof(SignUpPage));

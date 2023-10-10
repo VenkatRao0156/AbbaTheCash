@@ -13,7 +13,7 @@
                 <Image Aspect="AspectFill"
                        Source="dotnet_bot.svg"
                        Opacity="0.6" />
-                <Label Text="My Name"
+                <Label Text="{Binding UserName}"
                        TextColor="White"
                        FontAttributes="Bold"
                        HorizontalTextAlignment="Center"
@@ -81,10 +81,24 @@
         ContentTemplate="{DataTemplate views:HelpPage}"
         Route="help"/>
 
-    <ShellContent 
-     Title="SignOut"
-     Icon="bearpng" />
+    <MenuItem 
+        Command="{Binding SignOutCommand}"
+        Text="SignOut"
+        IconImageSource="bearpng" />
 
-    <ShellContent 
-     Title="Exit" />
+    <MenuItem 
+         Command="{Binding ExitCommand}"
+         Text="Exit"
+         IconImageSource="bearpng" />
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <StackLayout Padding="10" >
+                <Label Text="{Binding VersionName}"
+                       FontAttributes="Bold"
+                       TextColor="Red"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
 </Shell>
