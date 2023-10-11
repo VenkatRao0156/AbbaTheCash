@@ -9,9 +9,9 @@
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
             <Grid BackgroundColor="Black"
-                  HeightRequest="120">
-                <Image Aspect="AspectFill"
-                       Source="dotnet_bot.svg"
+                  HeightRequest="200">
+                <Image Aspect="AspectFit"
+                       Source="atc_logo.png"
                        Opacity="0.6" />
                 <Label Text="{Binding UserName}"
                        TextColor="White"
@@ -67,9 +67,9 @@
         Route="myCards"/>
 
     <ShellContent 
-       Title="My Payee" 
-       ContentTemplate="{DataTemplate views:MyPayeePage}"
-       Route="myPayee"/>
+        Title="My Payee" 
+        ContentTemplate="{DataTemplate views:MyPayeePage}"
+        Route="myPayee"/>
 
     <ShellContent 
         Title="Settings" 
@@ -82,9 +82,9 @@
         Route="help"/>
 
     <MenuItem 
-     Command="{Binding ContactUsCommand}"
-     Text="Contact Us"
-     IconImageSource="bearpng" />
+        Command="{Binding ContactUsCommand}"
+        Text="Contact Us"
+        IconImageSource="bearpng" />
 
     <MenuItem 
         Command="{Binding SignOutCommand}"
@@ -92,9 +92,9 @@
         IconImageSource="bearpng" />
 
     <MenuItem 
-         Command="{Binding ExitCommand}"
-         Text="Exit"
-         IconImageSource="bearpng" />
+        Command="{Binding ExitCommand}"
+        Text="Exit"
+        IconImageSource="bearpng" />
 
     <Shell.FlyoutFooterTemplate>
         <DataTemplate>

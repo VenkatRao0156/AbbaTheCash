@@ -10,7 +10,7 @@ namespace AbbaTheCash.ViewModels
         string versionName = "Version v" + AppInfo.Current.VersionString;
 
         [ObservableProperty]
-        string userName = "Venkatrao M";
+        string userName = "VenkatRao M";
 
         public ICommand ContactUsCommand => new Command(ContactUs);
         public ICommand SignOutCommand => new Command(SignOut);
@@ -41,7 +41,7 @@ namespace AbbaTheCash.ViewModels
         {
             if (Email.Default.IsComposeSupported)
             {
-                string subject = "Email Form Venkatrao";
+                string subject = "Email From Venkatrao";
                 string body = "Write your concern/query here!";
                 string[] recipients = new[] { toEmailID };
 
@@ -69,10 +69,10 @@ namespace AbbaTheCash.ViewModels
 
         public async void SignOut()
         {
-            var exit = await App.Current.MainPage.DisplayAlert("SignOut?", "Are you want to signOut the app?", "Yes", "No");
+            var exit = await App.Current.MainPage.DisplayAlert("SignOut?", "Are you want to SignOut the app?", "Yes", "No");
             if (exit)
             {
-                Environment.Exit(0);
+                await Shell.Current.GoToAsync("///login");
             }
         }
 
