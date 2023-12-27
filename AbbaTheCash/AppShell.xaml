@@ -1,10 +1,9 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="AbbaTheCash.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:views="clr-namespace:AbbaTheCash.Views"
-    Shell.FlyoutBehavior="Flyout">
+<Shell x:Class="AbbaTheCash.AppShell"
+       xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:views="clr-namespace:AbbaTheCash.Views"
+       Shell.FlyoutBehavior="Flyout">
 
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
@@ -23,82 +22,71 @@
     </Shell.FlyoutHeaderTemplate>
 
     <!--Login Page-->
-    <ShellContent 
-        Title="Login" 
-        ContentTemplate="{DataTemplate views:LoginPage}"
-        FlyoutItemIsVisible="False"
-        Route="login"/>
+    <ShellContent Title="Login"
+                  ContentTemplate="{DataTemplate views:LoginPage}"
+                  FlyoutItemIsVisible="False"
+                  Route="login" />
 
     <!--SignUp Page-->
-    <ShellContent 
-        Title="SignUp" 
-        ContentTemplate="{DataTemplate views:SignUpPage}"
-        FlyoutItemIsVisible="False"
-        Route="signup"/>
+    <ShellContent Title="SignUp"
+                  ContentTemplate="{DataTemplate views:SignUpPage}"
+                  FlyoutItemIsVisible="False"
+                  Route="signup" />
 
     <!--Login Page-->
-    <ShellContent 
-        Title="Forgot" 
-        ContentTemplate="{DataTemplate views:ForgotPWPage}"
-        FlyoutItemIsVisible="False"
-        Route="forgot"/>
+    <ShellContent Title="Forgot"
+                  ContentTemplate="{DataTemplate views:ForgotPWPage}"
+                  FlyoutItemIsVisible="False"
+                  Route="forgot" />
 
     <!--Home Page-->
-    <ShellContent 
-        Title="Home" 
-        ContentTemplate="{DataTemplate views:HomePage}"
-        Route="home"/>
+    <ShellContent Title="Home"
+                  ContentTemplate="{DataTemplate views:HomePage}"
+                  Route="home" />
 
     <!--Payment Details Page-->
-    <ShellContent 
-        Title="PaymentDetails" 
-        ContentTemplate="{DataTemplate views:PaymentDetailsPage}"
-        FlyoutItemIsVisible="False"
-        Route="paymentDetails"/>
+    <ShellContent Title="PaymentDetails"
+                  ContentTemplate="{DataTemplate views:PaymentDetailsPage}"
+                  FlyoutItemIsVisible="False"
+                  Route="paymentDetails" />
 
-    <ShellContent 
-        Title="Transactions" 
-        ContentTemplate="{DataTemplate views:TransactionsPage}"
-        Route="transactions"/>
+    <ShellContent Title="Transactions"
+                  ContentTemplate="{DataTemplate views:TransactionsPage}"
+                  Route="transactions" />
 
-    <ShellContent 
-        Title="My Cards" 
-        ContentTemplate="{DataTemplate views:MyCardsPage}"
-        Route="myCards"/>
+    <ShellContent Title="My Cards"
+                  ContentTemplate="{DataTemplate views:MyCardsPage}"
+                  Route="myCards" />
 
-    <ShellContent 
-        Title="My Payee" 
-        ContentTemplate="{DataTemplate views:MyPayeePage}"
-        Route="myPayee"/>
+    <ShellContent Title="My Payee"
+                  ContentTemplate="{DataTemplate views:MyPayeePage}"
+                  Route="myPayee" />
 
-    <ShellContent 
-        Title="Settings" 
-        ContentTemplate="{DataTemplate views:SettingsPage}"
-        Route="settings"/>
+    <ShellContent Title="Settings"
+                  ContentTemplate="{DataTemplate views:SettingsPage}"
+                  Route="settings" />
 
-    <ShellContent 
-        Title="Help" 
-        ContentTemplate="{DataTemplate views:HelpPage}"
-        Route="help"/>
+    <ShellContent Title="Help"
+                  ContentTemplate="{DataTemplate views:HelpPage}"
+                  Route="help" />
 
-    <MenuItem 
-        Command="{Binding ContactUsCommand}"
-        Text="Contact Us"
-        IconImageSource="bearpng" />
+    <ShellContent Title="Contact Us"
+                  ContentTemplate="{DataTemplate views:ContactUsPage}"
+                  Route="contactus" />
 
-    <MenuItem 
-        Command="{Binding SignOutCommand}"
-        Text="SignOut"
-        IconImageSource="bearpng" />
+    <!--Command="{Binding ContactUsCommand}"-->
 
-    <MenuItem 
-        Command="{Binding ExitCommand}"
-        Text="Exit"
-        IconImageSource="bearpng" />
+    <MenuItem Command="{Binding SignOutCommand}"
+              Text="SignOut"
+              IconImageSource="bearpng" />
+
+    <MenuItem Command="{Binding ExitCommand}"
+              Text="Exit"
+              IconImageSource="bearpng" />
 
     <Shell.FlyoutFooterTemplate>
         <DataTemplate>
-            <StackLayout Padding="10" >
+            <StackLayout Padding="10">
                 <Label Text="{Binding VersionName}"
                        FontAttributes="Bold"
                        TextColor="Red"

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AbbaTheCash.Views.ContactUsPage">
+
+    <VerticalStackLayout Padding="20"
+                         Spacing="20">
+        <Label Text="Feel free to contact us anytime. We are ready to help you."
+               HorizontalOptions="CenterAndExpand" />
+        <Frame HasShadow="True"
+               Padding="20"
+               CornerRadius="10">
+            <HorizontalStackLayout>
+                <Image HeightRequest="35"
+                       WidthRequest="35"
+                       Margin="0,0,10,0"
+                       Source="phone_icon.png" />
+                <VerticalStackLayout>
+                    <Label Text="Phone"
+                           FontAttributes="Bold"
+                           FontSize="18" />
+                    <Label  Text="(+91)9959027777"
+                            FontSize="18" />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding PhoneTapCommand}" />
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Frame HasShadow="True"
+               Padding="20"
+               CornerRadius="10">
+            <HorizontalStackLayout>
+                <Image HeightRequest="35"
+                       WidthRequest="35"
+                       Margin="0,0,10,0"
+                       Source="whatsapp_icon.png" />
+                <VerticalStackLayout>
+                    <Label Text="WhatsApp"
+                           FontAttributes="Bold"
+                           FontSize="18" />
+                    <Label  Text="(+91)9959027777"
+                            FontSize="18" />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding WhatsAppTapCommand}" />
+            </Frame.GestureRecognizers>
+        </Frame>
+
+        <Frame HasShadow="True"
+               Padding="20"
+               CornerRadius="10">
+            <HorizontalStackLayout>
+                <Image HeightRequest="35"
+                       WidthRequest="35"
+                       Margin="0,0,10,0"
+                       Source="email_icon.jpg" />
+                <VerticalStackLayout>
+                    <Label Text="Email"
+                           FontAttributes="Bold"
+                           FontSize="18" />
+                    <Label  Text="venkatrao0156@gmail.com"
+                            FontSize="18" />
+                </VerticalStackLayout>
+            </HorizontalStackLayout>
+            <Frame.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding EmailTapCommand}" />
+            </Frame.GestureRecognizers>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>

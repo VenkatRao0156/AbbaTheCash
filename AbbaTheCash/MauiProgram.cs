@@ -16,9 +16,15 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+        Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(IView.Background), (handler, view) =>
+        {
+#if ANDROID
+            handler.PlatformView.SetBackgroundColor(Android.Graphics.Color.Transparent);
+#endif
+        });
 
 #if DEBUG
-		builder.Logging.AddDebug();
+        builder.Logging.AddDebug();
 #endif
         builder.Services.AddSingleton<LoginVM>();
         builder.Services.AddSingleton<LoginPage>();
@@ -40,6 +46,8 @@ public static class MauiProgram
         builder.Services.AddSingleton<SettingsVM>();
         builder.Services.AddSingleton<HelpPage>();
         builder.Services.AddSingleton<HelpVM>();
+        builder.Services.AddSingleton<ContactUsPage>();
+        builder.Services.AddSingleton<ContactUsVM>();
         return builder.Build();
 	}
 }
