@@ -34,9 +34,6 @@
 	  <CreatePackage>false</CreatePackage>
 	</PropertyGroup>
 	<ItemGroup>
-		<!-- App Icon -->
-
-		<!-- Splash Screen -->
 
 		<!-- Images -->
 		<MauiImage Include="Resources\Images\*" />
@@ -86,7 +83,7 @@
 	  </BundleResource>
 	</ItemGroup>
 	<ItemGroup>
-	  <MauiSplashScreen Include="Resources\Splash\splash.png" BaseSize="128,128" />
+	  <MauiSplashScreen Include="Resources\Splash\splash.png" Color="#ffffff" />
 	</ItemGroup>
 	<ItemGroup>
 	  <MauiIcon Include="Resources\AppIcon\appicon.png" />
