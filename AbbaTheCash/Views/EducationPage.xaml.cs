@@ -12,8 +12,6 @@ public partial class EducationPage : ContentPage
 
     protected override bool OnBackButtonPressed()
     {
-        var vm = (EducationVM)BindingContext;
-        vm.OnHardBackButtonPressed();
-        return true;
+        return false;
     }
 }

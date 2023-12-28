@@ -16,12 +16,12 @@ namespace AbbaTheCash.ViewModels
 
         public async void PayRent()
         {
-            await Shell.Current.GoToAsync("//rentPage");
+            await Shell.Current.GoToAsync("/rentPage");
         }
 
         public async void EducationFee()
         {
-            await Shell.Current.GoToAsync("//educationPage");
+            await Shell.Current.GoToAsync("/educationPage");
         }
 
         public async override void OnHardBackButtonPressed()

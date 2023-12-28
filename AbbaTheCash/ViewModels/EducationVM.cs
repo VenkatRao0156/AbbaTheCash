@@ -13,11 +13,7 @@ namespace AbbaTheCash.ViewModels
         }
         public async override void OnHardBackButtonPressed()
         {
-            var exit = await App.Current.MainPage.DisplayAlert("Exit App?", "Are you want to exit the app?", "Yes", "No");
-            if (exit)
-            {
-                Environment.Exit(0);
-            }
+           
         }
     }
 }

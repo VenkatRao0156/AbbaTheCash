@@ -12,8 +12,6 @@ public partial class RentPage : ContentPage
 
     protected override bool OnBackButtonPressed()
     {
-        var vm = (RentVM)BindingContext;
-        vm.OnHardBackButtonPressed();
-        return true;
+        return false;
     }
 }
