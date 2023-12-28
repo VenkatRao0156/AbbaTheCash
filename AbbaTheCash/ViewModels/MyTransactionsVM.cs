@@ -1,11 +1,10 @@
 ﻿using System;
 namespace AbbaTheCash.ViewModels
 {
-	public class HelpVM
+	public class MyTransactionsVM
 	{
-		public HelpVM()
+		public MyTransactionsVM()
 		{
 		}
 	}
 }
-

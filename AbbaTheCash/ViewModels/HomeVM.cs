@@ -1,34 +1,27 @@
 ﻿using System;
+using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 
 namespace AbbaTheCash.ViewModels
 {
     public partial class HomeVM : BaseVM
     {
-        // button click event is not working plase follow ICommond(old proces)
-
-        [RelayCommand]
-        public async void PayBill()
+        public ICommand PayRentCommand { set; get; }
+        public ICommand EducationFeeCommand { set; get; }
+        public HomeVM()
         {
-            await Shell.Current.GoToAsync("//paymentDetails");
+            PayRentCommand = new Command(PayRent);
+            EducationFeeCommand = new Command(EducationFee);
         }
 
-        [RelayCommand]
         public async void PayRent()
         {
-            await Shell.Current.GoToAsync("//paymentDetails");
+            await Shell.Current.GoToAsync("//rentPage");
         }
 
-        [RelayCommand]
         public async void EducationFee()
         {
-            await Shell.Current.GoToAsync("//paymentDetails");
-        }
-
-        [RelayCommand]
-        public async void OfficeBill()
-        {
-            await Shell.Current.GoToAsync("//paymentDetails");
+            await Shell.Current.GoToAsync("//educationPage");
         }
 
         public async override void OnHardBackButtonPressed()

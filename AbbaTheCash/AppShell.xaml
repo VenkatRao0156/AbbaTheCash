@@ -3,86 +3,93 @@
        xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:AbbaTheCash.Views"
+       Shell.FlyoutWidth="300"
        Shell.FlyoutBehavior="Flyout">
 
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
-            <Grid BackgroundColor="Black"
-                  HeightRequest="200">
-                <Image Aspect="AspectFit"
-                       Source="atc_logo.png"
-                       Opacity="0.6" />
-                <Label Text="{Binding UserName}"
-                       TextColor="White"
-                       FontAttributes="Bold"
-                       HorizontalTextAlignment="Center"
-                       VerticalTextAlignment="Center" />
-            </Grid>
+            <Frame BackgroundColor="White"
+                   HasShadow="True"
+                   CornerRadius="10"
+                   Padding="10"
+                   Margin="10">
+                <StackLayout>
+                    <Label Text="{Binding UserName}"
+                           FontAttributes="Bold"
+                           FontSize="18"
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Start" />
+                    <Label Text="{Binding PhoneNumber}"
+                           FontSize="15"
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Start" />
+                    <Label Text="{Binding EmailID}"
+                           FontSize="15"
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Start" />
+                </StackLayout>
+            </Frame>
         </DataTemplate>
     </Shell.FlyoutHeaderTemplate>
 
-    <!--Login Page-->
     <ShellContent Title="Login"
                   ContentTemplate="{DataTemplate views:LoginPage}"
                   FlyoutItemIsVisible="False"
                   Route="login" />
 
-    <!--SignUp Page-->
     <ShellContent Title="SignUp"
                   ContentTemplate="{DataTemplate views:SignUpPage}"
                   FlyoutItemIsVisible="False"
                   Route="signup" />
 
-    <!--Login Page-->
     <ShellContent Title="Forgot"
                   ContentTemplate="{DataTemplate views:ForgotPWPage}"
                   FlyoutItemIsVisible="False"
                   Route="forgot" />
 
-    <!--Home Page-->
     <ShellContent Title="Home"
                   ContentTemplate="{DataTemplate views:HomePage}"
-                  Route="home" />
+                  Route="home"
+                  Icon="home_icon.png" />
 
-    <!--Payment Details Page-->
+    <ShellContent Title="My Transactions"
+                  ContentTemplate="{DataTemplate views:MyTransactionsPage}"
+                  Route="myTransactions"
+                  Icon="transactions_icon.png" />
+
+    <ShellContent Title="My Cards"
+                  ContentTemplate="{DataTemplate views:MyCardsPage}"
+                  Route="myCards"
+                  Icon="cards_icon.png" />
+
+    <ShellContent Title="Settings"
+                  ContentTemplate="{DataTemplate views:SettingsPage}"
+                  Route="settings"
+                  Icon="settings_icon.png" />
+
+    <ShellContent Title="Contact Us"
+                  ContentTemplate="{DataTemplate views:ContactUsPage}"
+                  Route="contactus"
+                  Icon="contactus_icon.png" />
+
+    <ShellContent Title="Pay Rent"
+                  ContentTemplate="{DataTemplate views:RentPage}"
+                  FlyoutItemIsVisible="False"
+                  Route="rentPage" />
+
+    <ShellContent Title="Pay Education Fee"
+                  ContentTemplate="{DataTemplate views:EducationPage}"
+                  FlyoutItemIsVisible="False"
+                  Route="educationPage" />
+
     <ShellContent Title="PaymentDetails"
                   ContentTemplate="{DataTemplate views:PaymentDetailsPage}"
                   FlyoutItemIsVisible="False"
                   Route="paymentDetails" />
 
-    <ShellContent Title="Transactions"
-                  ContentTemplate="{DataTemplate views:TransactionsPage}"
-                  Route="transactions" />
-
-    <ShellContent Title="My Cards"
-                  ContentTemplate="{DataTemplate views:MyCardsPage}"
-                  Route="myCards" />
-
-    <ShellContent Title="My Payee"
-                  ContentTemplate="{DataTemplate views:MyPayeePage}"
-                  Route="myPayee" />
-
-    <ShellContent Title="Settings"
-                  ContentTemplate="{DataTemplate views:SettingsPage}"
-                  Route="settings" />
-
-    <ShellContent Title="Help"
-                  ContentTemplate="{DataTemplate views:HelpPage}"
-                  Route="help" />
-
-    <ShellContent Title="Contact Us"
-                  ContentTemplate="{DataTemplate views:ContactUsPage}"
-                  Route="contactus" />
-
-    <!--Command="{Binding ContactUsCommand}"-->
-
-    <MenuItem Command="{Binding SignOutCommand}"
-              Text="SignOut"
-              IconImageSource="bearpng" />
-
-    <MenuItem Command="{Binding ExitCommand}"
-              Text="Exit"
-              IconImageSource="bearpng" />
+    <MenuItem Command="{Binding LogOutCommand}"
+              Text="LogOut"
+              IconImageSource="logout_icon.png" />
 
     <Shell.FlyoutFooterTemplate>
         <DataTemplate>
@@ -90,7 +97,7 @@
                 <Label Text="{Binding VersionName}"
                        FontAttributes="Bold"
                        TextColor="Red"
-                       HorizontalOptions="Center" />
+                       HorizontalOptions="CenterAndExpand" />
             </StackLayout>
         </DataTemplate>
     </Shell.FlyoutFooterTemplate>

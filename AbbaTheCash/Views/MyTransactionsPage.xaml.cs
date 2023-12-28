@@ -2,9 +2,9 @@
 
 namespace AbbaTheCash.Views;
 
-public partial class TransactionsPage : ContentPage
+public partial class MyTransactionsPage : ContentPage
 {
-	public TransactionsPage(TransactionsVM vm)
+	public MyTransactionsPage(MyTransactionsVM vm)
 	{
 		InitializeComponent();
         BindingContext = vm;

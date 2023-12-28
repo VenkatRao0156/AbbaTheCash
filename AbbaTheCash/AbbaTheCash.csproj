@@ -59,8 +59,14 @@
 
 	<ItemGroup>
 	  <None Remove="Resources\AppIcon\appicon.png" />
+	  <None Remove="Resources\Images\cards_icon.png" />
+	  <None Remove="Resources\Images\contactus_icon.png" />
 	  <None Remove="Resources\Images\email_icon.jpg" />
+	  <None Remove="Resources\Images\home_icon.png" />
+	  <None Remove="Resources\Images\logout_icon.png" />
 	  <None Remove="Resources\Images\phone_icon.png" />
+	  <None Remove="Resources\Images\settings_icon.png" />
+	  <None Remove="Resources\Images\transactions_icon.png" />
 	  <None Remove="Resources\Images\whatsapp_icon.png" />
 	  <None Remove="Resources\Splash\splash.png" />
 	  <None Remove="Views\" />
@@ -86,7 +92,18 @@
 	  <MauiIcon Include="Resources\AppIcon\appicon.png" />
 	</ItemGroup>
 	<ItemGroup>
+	  <Compile Update="Views\MyTransactionsPage.xaml.cs">
+	    <DependentUpon>MyTransactionsPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
 	  <MauiXaml Update="Views\ContactUsPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\EducationPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Views\RentPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

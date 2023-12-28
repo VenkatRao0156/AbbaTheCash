@@ -5,26 +5,45 @@
              Shell.NavBarIsVisible="True"
              Title="Home">
     <VerticalStackLayout >
-        <Grid >
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
+        <Label Text="Welcome to Venkatrao M"
+               Margin="0,10,0,10"
+               FontSize="15" HorizontalOptions="CenterAndExpand"/>
+        <Grid Margin="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Frame Grid.Column="0" Grid.Row="0">
-                <Button Command="{Binding PayBillCommand}" Text="Utility Bill" />
+            <Frame Grid.Column="0"
+                   BackgroundColor="BlueViolet"
+                   BorderColor="Blue"
+                   CornerRadius="15"
+                   Padding="20"
+                   HasShadow="True"
+                   Margin="10">
+                <Label Text="Pay Rent"
+                       FontSize="20"
+                       TextColor="White"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding PayRentCommand}" />
+                </Frame.GestureRecognizers>
             </Frame>
-            <Frame Grid.Column="1" Grid.Row="0">
-                <Button Command="{Binding PayRentCommand}" Text="Pay Rent" />
-            </Frame>
-            <Frame Grid.Column="0" Grid.Row="1">
-                <Button Command="{Binding EducationFeeCommand}" Text="Education Fee" />
-            </Frame>
-            <Frame Grid.Column="1" Grid.Row="1">
-                <Button Command="{Binding OfficeBillCommand}" Text="Office Fee" />
+            <Frame Grid.Column="1"
+                   BackgroundColor="BlueViolet"
+                   BorderColor="Blue"
+                   CornerRadius="15"
+                   Padding="20"
+                   HasShadow="True"
+                   Margin="10">
+                <Label Text="Education Fee"
+                       FontSize="20"
+                       TextColor="White"
+                       VerticalOptions="CenterAndExpand"
+                       HorizontalOptions="CenterAndExpand" />
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding EducationFeeCommand}" />
+                </Frame.GestureRecognizers>
             </Frame>
         </Grid>
     </VerticalStackLayout>

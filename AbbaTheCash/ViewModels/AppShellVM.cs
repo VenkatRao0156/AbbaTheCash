@@ -13,24 +13,20 @@ namespace AbbaTheCash.ViewModels
         [ObservableProperty]
         string userName = "VenkatRao M";
 
-        public ICommand SignOutCommand => new Command(SignOut);
-        public ICommand ExitCommand => new Command(Exit);
+        [ObservableProperty]
+        string phoneNumber = "+919959027777";
 
-        public async void SignOut()
+        [ObservableProperty]
+        string emailID = "venkatrao0156@gmail.com";
+
+        public ICommand LogOutCommand => new Command(LogOut);
+
+        public async void LogOut()
         {
-            var exit = await App.Current.MainPage.DisplayAlert("SignOut?", "Are you want to SignOut the app?", "Yes", "No");
+            var exit = await App.Current.MainPage.DisplayAlert("LogOut?", "Are you want to LogOut the app?", "Yes", "No");
             if (exit)
             {
                 await Shell.Current.GoToAsync("///login");
-            }
-        }
-
-        public async void Exit()
-        {
-            var exit = await App.Current.MainPage.DisplayAlert("Exit App?", "Are you want to exit the app?", "Yes", "No");
-            if (exit)
-            {
-                Environment.Exit(0);
             }
         }
 

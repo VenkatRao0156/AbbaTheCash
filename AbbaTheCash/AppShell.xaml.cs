@@ -17,11 +17,11 @@ public partial class AppShell : Shell
         Routing.RegisterRoute("home", typeof(HomePage));
         Routing.RegisterRoute("forgot", typeof(ForgotPWPage));
         Routing.RegisterRoute("paymentDetails", typeof(PaymentDetailsPage));
-        Routing.RegisterRoute("transactions", typeof(TransactionsPage));
+        Routing.RegisterRoute("myTransactions", typeof(MyTransactionsPage));
         Routing.RegisterRoute("myCards", typeof(MyCardsPage));
-        Routing.RegisterRoute("myPayee", typeof(MyPayeePage));
         Routing.RegisterRoute("settings", typeof(SettingsPage));
-        Routing.RegisterRoute("help", typeof(HelpPage));
         Routing.RegisterRoute("contactus", typeof(ContactUsPage));
+        Routing.RegisterRoute("rentPage", typeof(RentPage));
+        Routing.RegisterRoute("contactusPage", typeof(EducationPage));
     }
 }
