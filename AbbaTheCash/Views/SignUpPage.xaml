@@ -4,7 +4,7 @@
              x:Class="AbbaTheCash.Views.SignUpPage"
              xmlns:vm="clr-namespace:AbbaTheCash.ViewModels"
              x:DataType="vm:SignUpVM"
-             BackgroundColor="GhostWhite"
+             BackgroundColor="#EBEBEB"
              Shell.NavBarIsVisible="False"
              Title="Create an account">
     <VerticalStackLayout Margin="0,20,0,0" Padding="30" Spacing="10">
