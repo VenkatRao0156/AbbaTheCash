@@ -4,8 +4,10 @@
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:views="clr-namespace:AbbaTheCash.Views"
        Shell.FlyoutWidth="300"
+    FlyoutBackgroundColor="DimGrey"
+       
        Shell.FlyoutBehavior="Flyout">
-
+        
     <Shell.FlyoutHeaderTemplate>
         <DataTemplate>
             <Frame BackgroundColor="White"
@@ -96,7 +98,7 @@
             <StackLayout Padding="10">
                 <Label Text="{Binding VersionName}"
                        FontAttributes="Bold"
-                       TextColor="Red"
+                       TextColor="White"
                        HorizontalOptions="CenterAndExpand" />
             </StackLayout>
         </DataTemplate>
